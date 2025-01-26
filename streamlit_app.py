@@ -7,7 +7,13 @@ st.write("Kinda sus...")
 st.write(" ")
 
 # Create a button
-if st.button("Click Me"):
+if st.button("Click Me!"):
+    st.success("Button clicked!")
+else:
+    st.info("Button not clicked yet.")
+
+# Create a button 2
+if st.button("No, Click Me!"):
     st.success("Button clicked!")
 else:
     st.info("Button not clicked yet.")
