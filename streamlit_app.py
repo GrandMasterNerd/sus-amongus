@@ -1,9 +1,12 @@
 import streamlit as st
 import time
 
-# Initialize session state for page tracking
+# Initialize session state for page tracking and button state
 if "current_page" not in st.session_state:
     st.session_state.current_page = "home"
+
+if "button3_clicked" not in st.session_state:
+    st.session_state.button3_clicked = False
 
 # Define a function for navigation
 def navigate_to(page):
@@ -38,12 +41,15 @@ def home_page():
     st.write(" ")
 
     # Create a button 3
-    if st.button("DO NOT CLICK ME!!!"):
+    if st.session_state.button3_clicked:
         st.success("I warned you...")
         time.sleep(3)
         navigate_to("page1")
     else:
-        st.info("WHATEVER YOU DO, DO NOT CLICK THIS BUTTON!")
+        if st.button("DO NOT CLICK ME!!!"):
+            st.session_state.button3_clicked = True
+        else:
+            st.info("WHATEVER YOU DO, DO NOT CLICK THIS BUTTON!")
 
 def page1():
     st.title("Page 1")
