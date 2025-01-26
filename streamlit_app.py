@@ -57,8 +57,9 @@ def page2():
     if st.button("Go Home"):
         navigate_to("home")
 
-if button3_clicked == 1:
-    navigate_to("page1")
+def state_button3():
+    if button3_clicked == 1:
+        navigate_to("page1")
 
 # Render the current page
 if st.session_state.current_page == "home":
