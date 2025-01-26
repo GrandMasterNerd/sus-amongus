@@ -45,11 +45,8 @@ def home_page():
         st.success("I warned you...")
         time.sleep(3)
         navigate_to("page1")
-    else:
-        if st.button("DO NOT CLICK ME!!!"):
-            st.session_state.button3_clicked = True
-        else:
-            st.info("WHATEVER YOU DO, DO NOT CLICK THIS BUTTON!")
+    elif st.button("DO NOT CLICK ME!!!"):
+        st.session_state.button3_clicked = True
 
 def page1():
     st.title("Page 1")
