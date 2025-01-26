@@ -40,7 +40,7 @@ def home_page():
 
     # Create a button 3
     if st.button("DO NOT CLICK ME!!!"):
-        button3_clicked = 1
+        state_button3()
         st.success("I warned you...")
     else:
         st.info("WHATEVER YOU DO, DO NOT CLICK THIS BUTTON!")
